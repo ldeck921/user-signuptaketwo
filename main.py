@@ -7,7 +7,7 @@ app.config['DEBUG'] = True
 
 @app.route("/")
 def index():
-    return render_template('register.html', title="Registration Form")
+    return render_template('main.html', title="User-Signup")
 
 
 def is_valid_email(address):
@@ -81,7 +81,7 @@ def register():
         username = request.form['username']
         return redirect('/welcome?username={0}'.format(username))
     else:
-        return render_template('register.html', title="Registration Form",
+        return render_template('main.html', title="Registration Form",
             username=username, username_error=username_error,
             password=password, password_error=password_error,
             match=match, match_error=match_error,
